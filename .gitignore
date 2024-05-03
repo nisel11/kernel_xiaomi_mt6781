@@ -57,16 +57,12 @@ modules.builtin
 /vmlinuz
 /System.map
 /Module.markers
+/out
 
 #
 # RPM spec file (make rpm-pkg)
 #
 /*.spec
-
-#
-# Debian directory (make deb-pkg)
-#
-/debian/
 
 #
 # Snap directory (make snap-pkg)
@@ -134,3 +130,10 @@ all.config
 
 # Other
 !drivers/input/touchscreen/mediatek/ft3418_i2c/include/firmware/fw_sample.i
+
+# Unwanted debian parts
+/debian/changelog
+/debian/debhelper-*
+/debian/files
+/debian/linux-*
+/debian/path-override
