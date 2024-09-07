@@ -1524,12 +1524,7 @@ static struct freq_attr *_mt_cpufreq_attr[] = {
 
 static struct cpufreq_driver _mt_cpufreq_driver = {
 #if IS_ENABLED(CONFIG_MTK_CPU_CTRL)
-#if defined(CONFIG_MTK_PLAT_MT6885_EMULATION) || defined(CONFIG_MACH_MT6893) \
-	|| defined(CONFIG_MACH_MT6833)
 	.flags = CPUFREQ_ASYNC_NOTIFICATION | CPUFREQ_HAVE_GOVERNOR_PER_POLICY,
-#else /* CONFIG_MTK_PLAT_MT6885_EMULATION */
-	.flags = CPUFREQ_ASYNC_NOTIFICATION,
-#endif /* CONFIG_MTK_PLAT_MT6885_EMULATION */
 	.target = _mt_cpufreq_target,
 #else /* IS_ENABLED(CONFIG_MTK_CPU_CTRL) */
 	.flags = CPUFREQ_HAVE_GOVERNOR_PER_POLICY,
